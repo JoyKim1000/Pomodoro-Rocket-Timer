@@ -1,5 +1,5 @@
 // State Management
-let timeLeft = 10; // TEST MODE: 10 SECONDS
+let timeLeft = 25 * 60; 
 let timerId = null;
 let isFocusSession = true;
 let missionCount = 1;
