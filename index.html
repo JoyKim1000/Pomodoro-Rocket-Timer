@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코다리 부장의 성공 로켓 타이머</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body class="space-theme">
+    <div class="stars-container" id="stars"></div>
+
+    <main class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">SUCCESS MISSION</h1>
+            <input type="text" id="mission-name" class="mission-name" value="MISSION #1" title="클릭해서 미션명을 수정하세요!">
+        </header>
+
+        <!-- Rocket Visual Section -->
+        <div class="launch-pad">
+            <div id="rocket-wrapper" class="rocket-wrapper">
+                <img id="mascot" src="isolated_rocket.png" alt="Success Rocket" class="rocket-img">
+                <div id="thruster-fire" class="thruster-fire"></div>
+            </div>
+            <div id="leaf-wrapper" class="leaf-wrapper hidden">
+                <img src="rest_leaf.png" alt="Rest Leaf" class="leaf-img">
+            </div>
+            <div class="pad-base"></div>
+        </div>
+
+        <!-- Progress Info -->
+        <div class="mission-info">
+            <div id="session-status" class="status-badge">PREPARING FUEL...</div>
+            <div class="fuel-tank-wrapper">
+                <div class="fuel-label">FUEL LEVEL</div>
+                <div class="fuel-tank">
+                    <div id="fuel-fill" class="fuel-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timer Display -->
+        <div class="timer-section">
+            <div id="timer-display" class="timer-text">25:00</div>
+            <div class="countdown-label">COUNTDOWN TO LAUNCH</div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="reset-btn" class="icon-btn hidden" title="임무 중단">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            
+            <button id="start-btn" class="primary-btn">
+                <span id="start-text">엔진 점화 (START)</span>
+            </button>
+            
+            <button id="pause-btn" class="icon-btn hidden" title="따뜻한 차 한 잔 (일시정지)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </button>
+        </div>
+
+        <!-- Quote -->
+        <div class="quote-box">
+            <p id="kodari-quote" class="quote">
+                "대표님, 성공을 향한 카운트다운을 시작할까요? 충성!"
+            </p>
+        </div>
+
+        <!-- Weekly Report Section -->
+        <section class="weekly-report">
+            <div class="report-header">
+                <h2 class="report-title">WEEKLY SUCCESS ORBIT</h2>
+                <button id="reset-stats" class="text-btn">RESET STATS</button>
+            </div>
+            <div class="chart-container" id="weekly-chart">
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">MON</span></div>
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">TUE</span></div>
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">WED</span></div>
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">THU</span></div>
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">FRI</span></div>
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">SAT</span></div>
+                <div class="day-bar-wrapper"><div class="bar-fill" style="height: 0%;"></div><span class="day-label">SUN</span></div>
+            </div>
+        </section>
+
+        <!-- Footer Credits -->
+        <footer class="footer">
+            <p>Produced by <span class="creator-name">Joy Kim</span> & AI Manager Kodari</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

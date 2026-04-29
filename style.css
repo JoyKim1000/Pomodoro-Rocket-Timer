@@ -1,0 +1,400 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: #020617;
+    color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    justify-content: flex-start; /* Start from top for scrolling */
+    padding: 40px 0; /* Add padding for breathing room */
+    overflow-y: auto; /* ENABLE SCROLLING */
+    overflow-x: hidden;
+}
+
+/* Star Background */
+.stars-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Dashboard Styling */
+.dashboard {
+    position: relative;
+    z-index: 10;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(56, 189, 248, 0.2);
+    border-radius: 40px;
+    padding: 40px;
+    width: 95%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 50px rgba(14, 165, 233, 0.2);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #38bdf8;
+    margin-bottom: 4px;
+    font-weight: 800;
+}
+
+.mission-name {
+    font-size: 14px;
+    color: #f1f5f9;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.mission-name:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #38bdf8;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* Launch Pad & Rocket */
+.launch-pad {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Increased height for bigger rocket */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.rocket-wrapper, .leaf-wrapper {
+    position: relative;
+    width: 240px; 
+    height: 240px;
+}
+
+.rocket-wrapper.hidden, .leaf-wrapper.hidden {
+    display: none;
+}
+
+.rocket-img, .leaf-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: screen; 
+    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+}
+
+.leaf-img {
+    filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.4)); /* Green glow for leaf */
+    animation: gentle-sway 4s infinite ease-in-out;
+}
+
+@keyframes gentle-sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.pad-base {
+    width: 200px;
+    height: 15px;
+    background: linear-gradient(90deg, #1e293b, #334155, #1e293b);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 5; /* Stays below rocket but above dashboard bg */
+}
+
+/* Fuel Tank */
+.mission-info {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.status-badge {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fbbf24;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.fuel-tank-wrapper {
+    width: 100%;
+}
+
+.fuel-label {
+    font-size: 10px;
+    color: #64748b;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.fuel-tank {
+    width: 100%;
+    height: 12px;
+    background: #1e293b;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.fuel-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    box-shadow: 0 0 10px #38bdf8;
+    transition: width 1s linear;
+}
+
+/* Timer Display */
+.timer-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.timer-text {
+    font-size: 72px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -2px;
+    font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #64748b;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+/* Controls */
+/* Controls */
+.controls {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 24px;
+    justify-content: center; /* Ensures symmetry */
+}
+
+.primary-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+    transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.5);
+}
+
+.icon-btn {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 14px;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#reset-btn:hover {
+    background: rgba(244, 63, 94, 0.1);
+    color: #fb7185;
+    border-color: #f43f5e;
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+}
+
+#pause-btn:hover {
+    background: rgba(45, 212, 191, 0.1);
+    color: #2dd4bf;
+    border-color: #2dd4bf;
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.4);
+}
+
+/* Quote Box */
+.quote-box {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.quote {
+    color: #cbd5e1;
+    font-size: 13px;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Animations */
+.vibrate {
+    animation: vibrate 0.1s infinite;
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(-1px, -1px); }
+}
+
+.thruster-fire {
+    position: absolute;
+    top: 90%; /* Starts from the bottom area of the rocket */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px; 
+    height: 120px;
+    background: linear-gradient(to bottom, #fff, #fbbf24, #f59e0b, transparent);
+    border-radius: 20% 20% 50% 50%; /* Flipped border radius for flame shape */
+    filter: blur(4px); 
+    opacity: 0;
+    z-index: -1;
+    box-shadow: 0 10px 30px #f59e0b; /* Shadow moved down */
+}
+
+.launch-animation .thruster-fire {
+    opacity: 1;
+    animation: flame-flicker 0.1s infinite alternate;
+}
+
+@keyframes flame-flicker {
+    0% { height: 100px; transform: translateX(-50%) scaleX(1); opacity: 0.8; }
+    100% { height: 150px; transform: translateX(-50%) scaleX(1.3); opacity: 1; }
+}
+
+
+
+/* Weekly Report */
+.weekly-report {
+    width: 100%;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.report-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #38bdf8;
+    font-weight: 800;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.text-btn:hover {
+    color: #f43f5e;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    padding: 0 10px;
+}
+
+.day-bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 10%;
+}
+
+.bar-fill {
+    width: 100%;
+    background: linear-gradient(180deg, #38bdf8, #818cf8);
+    border-radius: 4px;
+    min-height: 2px;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.day-label {
+    font-size: 9px;
+    color: #64748b;
+    font-weight: 700;
+}
+
+/* Footer Credits */
+.footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 11px;
+    color: #475569;
+    letter-spacing: 1px;
+}
+
+.creator-name {
+    color: #38bdf8;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.hidden {
+    display: none;
+}

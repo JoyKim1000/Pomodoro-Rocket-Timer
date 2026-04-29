@@ -1,0 +1,17 @@
+{
+  "name": "코다리 성공 로켓",
+  "short_name": "코다리타이머",
+  "description": "AI 1인 기업 대표님을 위한 성공 로켓 뽀모도로 타이머",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#38bdf8",
+  "icons": [
+    {
+      "src": "success_rocket.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,5 +1,3 @@
-# Pomodoro-Rocket-Timer
-25분 집중, 5분 휴식하는 뽀모도로 방식의 로켓 타이머. 임무 완료하면 로켓 발사됨.
 # 🚀 코다리 성공 로켓 (Kodari Success Rocket)
 
 > **"대표님의 집중력이 성공의 연료가 되어 로켓을 쏘아 올립니다!"**  
@@ -33,3 +31,8 @@
 1.  배포된 주소에 접속합니다.
 2.  **iOS:** Safari 공유 버튼 -> '홈 화면에 추가'
 3.  **Android:** Chrome 메뉴 -> '홈 화면에 추가' 혹은 '앱 설치'
+
+---
+
+**Developed with ❤️ by Joy Kim & AI Manager Kodari**  
+*"Joy 대표님의 성공이 저 코다리 부장의 기쁨입니다! 충성!"* 🫡🐟
