@@ -35,4 +35,3 @@
 ---
 
 **Developed with ❤️ by Joy Kim & AI Manager Kodari**  
-*"Joy 대표님의 성공이 저 코다리 부장의 기쁨입니다! 충성!"* 🫡🐟
